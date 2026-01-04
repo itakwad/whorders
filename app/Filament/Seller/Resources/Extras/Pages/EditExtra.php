@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Filament\Seller\Resources\Extras\Pages;
+
+use App\Filament\Seller\Resources\Extras\ExtraResource;
+use Filament\Actions\DeleteAction;
+use Filament\Resources\Pages\EditRecord;
+
+class EditExtra extends EditRecord
+{
+    protected static string $resource = ExtraResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            DeleteAction::make(),
+        ];
+    }
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+}
