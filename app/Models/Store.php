@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Storage;
 
 class Store extends Model
 {
@@ -58,4 +60,22 @@ class Store extends Model
         $now = now()->format('H:i');
 
         return $now >= $this->open_time && $now <= $this->close_time;
-    }}
+    }
+
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+
+    public function products(): HasMany {
+        return $this->hasMany(Product::class);
+    }
+
+    public function extras(): HasMany {
+        return $this->hasMany(Extra::class);
+    }
+
+
+
+}

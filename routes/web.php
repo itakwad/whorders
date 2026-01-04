@@ -8,6 +8,7 @@ use App\Models\Store;
 use Filament\Facades\Filament;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Fortify\Features;
 
 Route::get('/', function () {
@@ -52,3 +53,4 @@ Route::middleware('auth')->get('/seller/select/{store}', function (Store $store)
     // توجه إلى الـ dashboard مع الـ tenant slug (بدل getPath())
     return redirect("/seller/{$store->slug}");
 })->name('seller.select-store');
+

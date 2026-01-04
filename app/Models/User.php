@@ -101,4 +101,7 @@ class User extends Authenticatable  implements FilamentUser, HasTenants ,HasDefa
     {
         return null; // عدم اختيار تلقائي، للسماح بالـ middleware بالتحكم
     }
+
+
+
 }
