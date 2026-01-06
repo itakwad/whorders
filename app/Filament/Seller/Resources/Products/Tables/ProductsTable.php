@@ -15,7 +15,11 @@ class ProductsTable
         return $table
             ->columns([
                     Tables\Columns\ImageColumn::make('image')
-                        ->label('الصورة'),
+                        ->label('الصورة')
+                ->disk('public')
+                        ->visibility('public')
+
+                ,
 
                     Tables\Columns\TextColumn::make('name')
                         ->label('المنتج')

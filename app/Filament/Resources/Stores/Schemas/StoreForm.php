@@ -48,12 +48,16 @@ class StoreForm
                 FileUpload::make('logo')
                     ->label('اللوجو')
                     ->image()
-                    ->directory('stores/logos'),
+                    ->disk('public')
+                    ->directory('stores/logos')
+                    ->visibility('public'),
 
                 FileUpload::make('cover_image')
                     ->label('صورة الغلاف')
                     ->image()
-                    ->directory('stores/covers'),
+                    ->disk('public')
+                    ->directory('stores/covers')
+                    ->visibility('public'),
 
             ]),
 

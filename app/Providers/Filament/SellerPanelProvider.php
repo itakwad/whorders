@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Models\Store;
+use Filament\Facades\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -26,6 +27,8 @@ class SellerPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
+
+
         return $panel
             ->id('seller')
             ->path('seller')
@@ -33,7 +36,12 @@ class SellerPanelProvider extends PanelProvider
             ->globalSearch(false) // هذا السطر يلغي شريط البحث العلوي تماماً
 
             ->tenant(Store::class, slugAttribute: 'slug', ownershipRelationship: 'user')
-
+            ->renderHook(
+                PanelsRenderHook::SIDEBAR_NAV_START,
+                fn () => view('filament.seller.panel.logo', [
+                    'tenant' => Filament::getTenant(),
+                ])
+            )
             ->colors([
                 'primary' => Color::Green,
             ])

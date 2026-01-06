@@ -45,7 +45,10 @@ class ProductForm
                                         Forms\Components\FileUpload::make('image')
                                             ->label('صورة المنتج')
                                             ->image()
-                                            ->directory('products'),
+                                            ->disk('public')
+                                            ->directory('products')
+                                            ->visibility('public'),
+
 
                                         Forms\Components\Toggle::make('is_active')
                                             ->label('نشط')

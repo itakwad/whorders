@@ -14,7 +14,7 @@ class StoresTable
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('logo')->label('اللوجو')->circular(),
+                Tables\Columns\ImageColumn::make('logo')->label('اللوجو')->circular()->disk('public')->visibility('public'),
                 Tables\Columns\TextColumn::make('name')->label('الاسم')->searchable(),
                 Tables\Columns\TextColumn::make('user.name')->label('البائع'),
                 Tables\Columns\IconColumn::make('is_active')->boolean()->label('نشط'),
