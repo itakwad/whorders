@@ -17,7 +17,10 @@ class ExtrasTable
                     ->label('الاسم')
                     ->searchable()
                     ->sortable(),
-
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('الصورة')
+                    ->disk('public')
+                    ->visibility('public'),
                 Tables\Columns\TextColumn::make('price')
                     ->label('السعر')
                     ->money('EGP') // تنسيق عملة

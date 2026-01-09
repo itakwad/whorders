@@ -67,7 +67,7 @@ class ProductForm
                                                 Forms\Components\TextInput::make('price')
                                                     ->label('السعر')
                                                     ->numeric()
-                                                    ->prefix('SAR')
+                                                    ->prefix('EGP')
                                                     ->required(),
                                             ])
                                             ->columns(2)

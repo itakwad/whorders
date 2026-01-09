@@ -11,7 +11,8 @@ class Extra extends Model
     protected $fillable = [
         'store_id',
         'name',
-        'price'
+        'price',
+        'image'
     ];
 
     // الإضافة تتبع متجر معين

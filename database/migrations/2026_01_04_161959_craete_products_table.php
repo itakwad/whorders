@@ -36,6 +36,8 @@ return new class extends Migration
             $table->foreignId('store_id')->constrained()->cascadeOnDelete();
             $table->string('name'); // مثال: صوص حار، جبنة زيادة
             $table->decimal('price', 10, 2)->default(0);
+            $table->string('image')->nullable();
+
             $table->timestamps();
         });
 

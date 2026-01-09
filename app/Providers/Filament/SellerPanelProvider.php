@@ -44,7 +44,8 @@ class SellerPanelProvider extends PanelProvider
             )
             ->colors([
                 'primary' => Color::Green,
-            ])
+            ])->brandLogo(asset('images/wh-order-logo.png'))
+            ->brandLogoHeight('6rem')
             ->discoverResources(in: app_path('Filament/Seller/Resources'), for: 'App\Filament\Seller\Resources')
             ->discoverPages(in: app_path('Filament/Seller/Pages'), for: 'App\Filament\Seller\Pages')
             ->pages([

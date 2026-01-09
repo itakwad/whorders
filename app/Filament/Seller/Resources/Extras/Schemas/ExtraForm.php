@@ -23,8 +23,14 @@ class ExtraForm
                             ->numeric()
                             ->prefix('جنية')
                             ->required(),
+                        Forms\Components\FileUpload::make('image')
+                            ->label('صورة الاضافة')
+                            ->image()
+                            ->disk('public')
+                            ->directory('extras')
+                            ->visibility('public'),
                     ])
-                    ->columns(2),
+                    ->columns(3),
             ]);
 
     }
